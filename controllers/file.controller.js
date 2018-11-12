@@ -4,11 +4,14 @@ const fs = require('fs');
 exports.uploadFile = (req, res) => {
 	res.send('File uploaded successfully! -> filename = ' + req.file.filename);
 }
-
+var profileimages=[];
 exports.listAllFiles = (req, res) => {
 	fs.readdir(uploadFolder, (err, files) => {
 		//res.send(files);
-		res.json({'status':'success','images':[files]});
+		
+		//profileimages.push(files);
+		
+		res.json({'status':'success','profileimages':files});
 	})
 }
 
